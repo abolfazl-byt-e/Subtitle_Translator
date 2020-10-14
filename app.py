@@ -3,10 +3,11 @@ import os
 from flask import Flask, flash, request, redirect, url_for, render_template, send_from_directory, send_file
 from werkzeug.utils import secure_filename
 
+pwd = os.path.abspath(os.getcwd())
 # set upload folder
-UPLOAD_FOLDER = '/home/byte/tmp/subtitle_translate/uploads/'
-TRANSLATED_FOLDER = '/home/byte/tmp/subtitle_translate/translated/'
-ALLOWED_EXTENSIONS = {"md", "vtt", "srt", "svb"}
+UPLOAD_FOLDER = '%s/uploads/' %pwd
+TRANSLATED_FOLDER = '%s/translated/' %pwd
+ALLOWED_EXTENSIONS = {"vtt", "srt"}
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -64,3 +65,6 @@ def download_file(filename):
 def return_files_tut(filename):
     file_path = TRANSLATED_FOLDER + filename
     return send_file(file_path, as_attachment=True, attachment_filename='')
+
+if __name__ == "__main__":
+    app.run(debug=True)
