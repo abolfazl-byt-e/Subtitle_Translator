@@ -65,6 +65,3 @@ def download_file(filename):
 def return_files_tut(filename):
     file_path = TRANSLATED_FOLDER + filename
     return send_file(file_path, as_attachment=True, attachment_filename='')
-
-if __name__ == "__main__":
-    app.run(debug=True)
