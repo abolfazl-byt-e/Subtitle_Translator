@@ -1,26 +1,22 @@
 from googletrans import Translator
 import webvtt
-from flask import Flask
-
-app = Flask(__name__)
-
 
 translator = Translator()
 
-#TODO get the file
-file_name = input('FILE NAME: enter file name with extention  .vtt .srt .sbv\n')
-x = file_name[:-4]
-y = file_name[-4:]
-file_name_persian = x + "_persian" + y
-print(file_name)
-print(file_name_persian)
+# #TODO get the file
+# file_name = input('FILE NAME: enter file name with extention  .vtt .srt .sbv\n')
+# x = file_name[:-4]
+# y = file_name[-4:]
+# file_name_persian = x + "_persian" + y
+# print(file_name)
+# print(file_name_persian)
 
 #TODO functions
-def vtt_translate(file_name, file_name_persian):
-    with open("./pase_it/%s"%file_name_persian, "a+") as f:
+def vtt_translate(upload_folder,download_folder, file_name, file_name_persian):
+    with open("%s%s"%(download_folder, file_name_persian), "a+") as f:
         f.write("WEBVTT\n\n")
 
-        captions = webvtt.read("./pase_it/%s"%file_name)
+        captions = webvtt.read("%s%s"%(upload_folder, file_name))
         for caption in captions:
             # print(caption.start,"-->", caption.end)
             f.write(caption.start)
@@ -32,13 +28,14 @@ def vtt_translate(file_name, file_name_persian):
             f.write("\n\n")
             # print()
         f.close()
-        print("Done. --> /pase_it/%s"%file_name_persian)
+        print("Done. --> %s%s"%(upload_folder, file_name_persian))
+        return file_name_persian
 
-def srt_translate(file_name, file_name_persian):
-    with open("./pase_it/%s"%file_name_persian, "a+") as f:
+def srt_translate(upload_folder, download_folder, file_name, file_name_persian):
+    with open("%s%s"%(download_folder, file_name_persian), "a+") as f:
 
         counter = 1
-        captions = webvtt.from_srt("./pase_it/%s"%file_name)
+        captions = webvtt.from_srt("%s%s"%(upload_folder, file_name))
         for caption in captions:
             f.write(str(counter))
             f.write("\n")
@@ -53,14 +50,15 @@ def srt_translate(file_name, file_name_persian):
             # print()
             counter +=1
         f.close()
-        print("Done. --> /pase_it/%s"%file_name_persian)
+        print("Done. --> %s%s"%(upload_folder, file_name_persian))
+        return file_name_persian
 
-#TODO detect file format
-if y == ".srt":
-    srt_translate(file_name, file_name_persian)
-elif y == ".vtt":
-    vtt_translate(file_name, file_name_persian)
-elif y == ".sbv":
-    pass
-else:
-    print("dont detect!!!")
+# #TODO detect file format
+# if y == ".srt":
+#     srt_translate(file_name, file_name_persian)
+# elif y == ".vtt":
+#     vtt_translate(file_name, file_name_persian)
+# elif y == ".sbv":
+#     pass
+# else:
+#     print("dont detect!!!")
