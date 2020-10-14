@@ -9,4 +9,5 @@ python - flask
 <p>5 - pip install -r requirements.txt</p>
 <p>6 - export FLASK_APP=app.py</p>
 <p>7 - export FLASK_ENV=development
-<p>python -m flask run
+<p>8 - python -m flask run
+<p>9 - localhost5000 in browser
