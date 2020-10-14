@@ -9,6 +9,6 @@ python - flask
 <p>5 - pip install -r requirements.txt</p>
 <p>6 - export FLASK_APP=app.py</p>
 <p>7 - export FLASK_ENV=development
-<p>8 - python init.py
+<p>8 - python init.py  {Only for the first time}
 <p>9 - python -m flask run --port=5000  {or another port}
 <p>10 - go to localhost:{port} in browser
