@@ -10,5 +10,5 @@ python - flask
 <p>6 - export FLASK_APP=app.py</p>
 <p>7 - export FLASK_ENV=development
 <p>8 - python init.py
-<p>8 - python -m flask run --port=5000  {or another port}
-<p>9 - go to localhost:{port} in browser
+<p>9 - python -m flask run --port=5000  {or another port}
+<p>10 - go to localhost:{port} in browser
