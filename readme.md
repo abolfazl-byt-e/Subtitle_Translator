@@ -1,14 +1,18 @@
-<h3>subtitile translator</h3><h5>english to persian</h5>
-python - flask
-<h5>how to run >></h5>
-<p>1 - git clone <-----></p>
-<p>2 - cd subtitle_translate
-<p>- if virtualenv dont installed -->  pip install python3-venv</p>
-<p>3 - python -m venv venv</p>
-<p>4 - source venv/bin/activate</p>
-<p>5 - pip install -r requirements.txt</p>
-<p>6 - export FLASK_APP=app.py</p>
-<p>7 - export FLASK_ENV=development
-<p>8 - python init.py  {Only for the first time}
-<p>9 - python -m flask run --port=5000  {or another port}
-<p>10 - go to localhost:{port} in browser
+# subtitile translator (*english to persian*)
+A app in python language to translate SRT english subtitles to persian language.
+</ br>
+*python* and *flask* are used.
+## how to run
+```
+git clone https://github.com/abolfazlbyte/Subtitle_Translator.git
+cd Subtitle_Translator
+pip install python3-venv
+python -m venv .venv
+source venv/bin/activate
+pip install -r requirements.txt
+export FLASK_APP=app.py
+export FLASK_ENV=development
+python init.py  #{Only for the first time}
+python -m flask run --port=5000  #{or another port}
+go to localhost:{port} in browser
+```
