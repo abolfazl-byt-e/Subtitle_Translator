@@ -1,6 +1,6 @@
 # subtitile translator (*english to persian*)
 A app in python language to translate SRT english subtitles to persian language.
-</ br>
+</br >
 *python* and *flask* are used.
 ## how to run
 ```
